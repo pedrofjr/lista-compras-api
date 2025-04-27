@@ -1,0 +1,8 @@
+# Ignorar arquivos do banco de dados H2 em arquivo
+/data/
+*.db
+*.mv.db
+*.trace.db
+
+# Diretório de build do Maven
+target/
