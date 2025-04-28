@@ -7,6 +7,7 @@ API REST para gerenciar uma lista de compras. Desenvolvida em Java com Spring Bo
 - Listar todos os itens
 - Atualizar item
 - Remover item
+- Reordenar itens
 
 ## Como executar
 
@@ -32,3 +33,4 @@ API REST para gerenciar uma lista de compras. Desenvolvida em Java com Spring Bo
 - Adicionar item: `POST /items`
 - Atualizar item: `PUT /items/{id}`
 - Remover item: `DELETE /items/{id}`
+- Reordenar itens: `PUT /items/reorder`

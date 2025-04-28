@@ -45,6 +45,23 @@ public class ItemController {
         }
     }
 
+    @PutMapping("/reorder")
+    public ResponseEntity<Void> reordenar(@RequestBody List<Long> idsOrdenados) {
+        List<Item> itens = itemService.listarTodos();
+        for (int i = 0; i < idsOrdenados.size(); i++) {
+            final int ordem = i + 1;
+            Long id = idsOrdenados.get(i);
+            itens.stream()
+                .filter(item -> item.getId().equals(id))
+                .findFirst()
+                .ifPresent(item -> {
+                    item.setOrdem(ordem);
+                    itemService.salvar(item);
+                });
+        }
+        return ResponseEntity.noContent().build();
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         if (itemService.buscarPorId(id).isPresent()) {

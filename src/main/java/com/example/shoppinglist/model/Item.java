@@ -9,6 +9,7 @@ public class Item {
     private Long id;
     private String nome;
     private Integer quantidade;
+    private Integer ordem;
     private Boolean comprado = false;
 
     public Item() {}
@@ -27,6 +28,9 @@ public class Item {
 
     public Integer getQuantidade() { return quantidade; }
     public void setQuantidade(Integer quantidade) { this.quantidade = quantidade; }
+
+    public Integer getOrdem() { return ordem; }
+    public void setOrdem(Integer ordem) { this.ordem = ordem; }
 
     public Boolean getComprado() { return comprado; }
     public void setComprado(Boolean comprado) { this.comprado = comprado; }
